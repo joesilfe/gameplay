@@ -1,4 +1,4 @@
-<h1 align="center">NLW Heat - ReactJS & Node.js</h1>
+<h1 align="center">NLW6 - Gameplay</h1>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -15,26 +15,21 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## Back-end
-- [TypeScript](https://www.typescriptlang.org/)
-- [Express](https://expressjs.com/pt-br/)
-- [Axios](https://axios-http.com/docs/intro)
-- [Prisma](https://www.prisma.io/)
-- [JSON Web Token](https://jwt.io/)
-- [Socket.IO](https://socket.io/)
+- [API Discord](https://discord.com/developers/docs/intro)
 
 ## Front-end
 - [TypeScript](https://www.typescriptlang.org/)
-- [ReactJS](https://pt-br.reactjs.org/)
-- [ViteJS](https://vitejs.dev/)
-- [React Icons](https://react-icons.github.io/react-icons)
-- [Axios](https://axios-http.com/docs/intro)
-- [Sass](https://sass-lang.com/)
-- [Socket.IO Client](https://socket.io/docs/v4/client-api/)
+- [Axios](https://axios-http.com/ptbr/docs/api_intro)
+- [ReactNative](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/)
+- [Iphone X Helper](https://github.com/ptelad/react-native-iphone-x-helper)
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
 
 
 ## 🚀 Como executar
 
-> Obs.: Nesse projeto temos autenticação via OAuth com o GitHub
+> Obs.: Nesse projeto temos autenticação via OAuth com o Discord
 
 - Clone o repositório e acesse a pasta;
 - Faça uma copia do arquivo `.env.example` para `.env` e preencha com as suas credenciais do GitHub;
@@ -43,8 +38,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Inicie o servidor com `yarn dev`;
 
 - Para acessar o Prisma Studio rode o comando `yarn dev:studio`;
-
-A aplicação pode ser acessada em [`localhost:4000`](http://localhost:4000).
 
 ## 📄 Licença
 
