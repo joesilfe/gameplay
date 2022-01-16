@@ -25,6 +25,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/)
 - [Iphone X Helper](https://github.com/ptelad/react-native-iphone-x-helper)
 - [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
+- [Vector Icons](https://icons.expo.fyi/)
 
 
 ## 🚀 Como executar
