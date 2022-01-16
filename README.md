@@ -37,8 +37,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Executa as migrations com `yarn dev:migrate`;
 - Inicie o servidor com `yarn dev`;
 
-- Para acessar o Prisma Studio rode o comando `yarn dev:studio`;
-
 ## 📄 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
