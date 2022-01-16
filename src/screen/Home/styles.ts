@@ -1,0 +1,24 @@
+import { StyleSheet } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+
+export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    header: {
+        width: '100%',
+        paddingHorizontal: 24,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: getStatusBarHeight() + 24,
+        marginBottom: 40,
+    },
+    matches: {
+        height: '100%',
+        marginTop: 8,
+    },
+    scroll: {
+        paddingBottom: 32,
+    },
+
+});
