@@ -34,9 +34,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Clone o repositório e acesse a pasta;
 - Faça uma copia do arquivo `.env.example` para `.env` e preencha com as suas credenciais do GitHub;
-- Instale as dependências com `yarn`;
-- Executa as migrations com `yarn dev:migrate`;
-- Inicie o servidor com `yarn dev`;
+- Instale as dependências com `yarn ou npm i`;
+- Inicie o emulador com `yarn start`;
 
 ## 📄 Licença
 
