@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, FlatList, RefreshControl } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
@@ -17,6 +17,9 @@ import { styles } from './styles';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { theme } from '../../global/styles/theme';
+import { BottomSheetModalView } from '../../components/modalView';
+
+
 
 export function Home() {
 
@@ -58,7 +61,7 @@ export function Home() {
         setLoading(false)
     }
 
-    
+
 
     useFocusEffect(
         useCallback(() => {
@@ -67,6 +70,7 @@ export function Home() {
     );
 
     return (
+
         <Background style={styles.container}>
             <View style={styles.header}>
                 <Profile />
@@ -114,7 +118,9 @@ export function Home() {
 
                     />
                 </>
-            }            
+            }
+
+            <BottomSheetModalView />
 
         </Background >
     )

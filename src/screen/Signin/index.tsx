@@ -17,6 +17,8 @@ import IllustationImg from '../../assets/illustration.png';
 import DiscordImg from '../../assets/discord.png';
 import useAuth from '../../hook/useAuth';
 
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+
 export function SignIn() {
 
     const { loading, signIn } = useAuth();

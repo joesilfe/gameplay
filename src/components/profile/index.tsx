@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Alert, Text, View } from 'react-native';
-import { GestureHandlerRootView, RectButton } from 'react-native-gesture-handler';
+import { Text, View } from 'react-native';
+import { getBottomSpace } from 'react-native-iphone-x-helper'
+import { RectButton } from 'react-native-gesture-handler';
 
 import { styles } from './styles';
 
@@ -12,7 +13,7 @@ import useAuth from '../../hook/useAuth';
 
 export function Profile() {
 
-    const { user, signOut } = useAuth();
+    const { user } = useAuth();
     const [signOutModal, setSignOutModal] = useState<boolean>(false);
 
     const uri = 'https://github.com/joesilfe.png';
@@ -63,9 +64,9 @@ export function Profile() {
             <ModalView
                 visible={signOutModal}
                 open={handleSignOutModal}
-                heigthModal={{height: 174}}
+                heigthModal={{ height: 174 + getBottomSpace() }}
             >
-                <SignOut open={handleSignOutModal}/>
+                <SignOut open={handleSignOutModal} />
             </ModalView>
 
         </View>

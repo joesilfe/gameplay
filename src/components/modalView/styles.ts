@@ -21,4 +21,13 @@ export const styles = StyleSheet.create({
         alignSelf: 'center',
         marginTop: 12,
     },
+    containerBottomSheet: {
+        flex: 1,
+        padding: 24,
+        backgroundColor: 'grey',
+    },
+    contentContainerBottomSheet: {
+        flex: 1,
+        alignItems: 'center',
+    },
 });

@@ -5,15 +5,16 @@ import { Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { Rajdhani_500Medium, Rajdhani_700Bold } from '@expo-google-fonts/rajdhani';
 
 import AppLoading from 'expo-app-loading'; 'expo-app-loading';
-import { StatusBar, LogBox } from 'react-native';
+import { StatusBar, LogBox, Text } from 'react-native';
 
 import { theme } from './src/global/styles/theme';
 
 import { Background } from './src/layout/background';
 import { Routes } from './src/routes';
 
-// import { AuthProvider } from './src/context/authContext';
 import { AppContextProvider } from './src/context/appContextProvider';
+
+
 
 export default function App() {
 
@@ -28,6 +29,8 @@ export default function App() {
     return <AppLoading />
   }
 
+
+
   return (
     <Background>
       <StatusBar
@@ -35,7 +38,7 @@ export default function App() {
         backgroundColor={theme.colors.secondary80}
         translucent={true}
       />
-      <AppContextProvider>
+        <AppContextProvider>
         <Routes />
       </AppContextProvider>
     </Background>
