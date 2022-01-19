@@ -33,8 +33,19 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 > Obs.: Nesse projeto temos autenticação via OAuth com o Discord
 
 - Clone o repositório e acesse a pasta;
-- Faça uma copia do arquivo `.env.example` para `.env` e preencha com as suas credenciais do GitHub;
 - Instale as dependências com `yarn ou npm i`;
+- Antes de iniciar, é preciso ter uma conta no Discord para acessar a tela de developers `https://discord.com/developers/applications`;
+- Após criar sua conta e acessar, é preciso criar uma Applications `Applications`, aproveite para dar um nome a sua aplicação;
+- Clique nas opções de menu em `OAath2 `, `General`;
+- Em `Redirects` adicione `https://auth.expo.io/nameApplications` o link de redirecionamento;
+> Não esqueça de substituir `nameApplications` pelo nome que deu a sua aplicação no discord;
+- Clique nas opções de menu em `OAath2 `, `URL Generators`;
+- Em `SCOPES`, selecione `identify`, `email`, `connections` e `guilds`;
+- Em `SELECT REDIRECT URL`, selecione `https://auth.expo.io/nameApplications`;
+- Em `GENERATED URL`, copie a url gerada;
+- Abra a aplicação no seu ambiente de desenvolvimento;
+- Faça uma copia do arquivo `.env.example` para `.env` e preencha os campos;
+> Muita atenção: No arquivo de exemplo você deve preencher da seguinte os seguintes campos `REDIRECT_URI`, `SCOPE`, `RESPONSE_TYPE=token`, `CLIENT_ID` e `CDN_IMAGE=https://cdn.discordapp.com`
 - Inicie o emulador com `yarn start`;
 
 ## 📄 Licença
