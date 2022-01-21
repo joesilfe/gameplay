@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         alignItems: 'center',
-        paddingTop: 64,
+        paddingTop: 24,
     },
     messageContent: {
         fontFamily: theme.fonts.text500,

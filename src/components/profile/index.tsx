@@ -6,22 +6,21 @@ import { RectButton } from 'react-native-gesture-handler';
 import { styles } from './styles';
 
 import { Avatar } from '../avatar';
-import { SignOut } from '../../screen/SignOut';
-import { ModalView } from '../modalView';
 
 import useAuth from '../../hook/useAuth';
+import useModal from '../../hook/useModal';
 
 export function Profile() {
 
     const { user } = useAuth();
-    const [signOutModal, setSignOutModal] = useState<boolean>(false);
-
+    const { handleOpenModal } = useModal();
+    
     const uri = 'https://github.com/joesilfe.png';
 
     const avatar = user.avatar === null ? uri : user.avatarUri
 
     function handleSignOutModal() {
-        setSignOutModal(isOpen => !isOpen);
+        handleOpenModal()
     };
 
     // function handleSignOut() {
@@ -61,13 +60,14 @@ export function Profile() {
                 </Text>
             </View>
 
-            <ModalView
+            {/* <ModalView
                 visible={signOutModal}
                 open={handleSignOutModal}
                 heigthModal={{ height: 174 + getBottomSpace() }}
             >
                 <SignOut open={handleSignOutModal} />
-            </ModalView>
+            </ModalView> */}
+            
 
         </View>
     )

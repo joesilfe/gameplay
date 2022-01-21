@@ -9,16 +9,20 @@ import { ButtonsTouchableOpacity } from '../../components/button';
 import LogoSvg from '../../assets/logo.svg'
 import useAuth from '../../hook/useAuth';
 
-
 import { styles } from './styles';
 
-type SignOutProps = {
-    open: () => void;
-}
+import useModal from '../../hook/useModal';
 
-export function SignOut({ open }: SignOutProps) {
+
+export function SignOut() {
 
     const { signOut } = useAuth();
+    const { handleCloseModal } = useModal();
+
+    function handerSignOut(){
+        handleCloseModal()
+        signOut()
+    }
 
     return (
         <View style={styles.container}>
@@ -34,14 +38,14 @@ export function SignOut({ open }: SignOutProps) {
             <View style={styles.footer}>
                 <ButtonsTouchableOpacity
                     title='Não'
-                    onPress={open}
+                    onPress={handleCloseModal}
                     sty={styles.buttomNo} 
                     activeOpacity={1}    
                 />
 
                 <ButtonsTouchableOpacity
                     title='Sim'
-                    onPress={signOut}
+                    onPress={handerSignOut}
                     sty={styles.buttomYes} 
                     activeOpacity={1}    
                 />

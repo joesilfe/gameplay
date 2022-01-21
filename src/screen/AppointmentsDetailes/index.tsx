@@ -130,7 +130,7 @@ export function AppointmentsDetailes() {
                 loading ?
                     showMessage ?
                         <Message
-                            message='Não foi possível conectar com o servidor, verifique as configurações do Widget.'
+                            message='Não foi possível conectar com o servidor, verifique as configurações do Widget do servidor.'
                             icon={
                                 <Feather
                                     name={'info'}

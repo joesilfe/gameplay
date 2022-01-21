@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, TextInputProps } from 'react-native';
+import { TextInput, TextInputProps, DatePickerIOSComponent } from 'react-native';
 import { theme } from '../../global/styles/theme';
 import { Background } from '../../layout/background';
 

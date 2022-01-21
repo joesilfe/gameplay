@@ -9,8 +9,6 @@ import useAuth from '../hook/useAuth';
 export function Routes() {
     const { user } = useAuth()
 
-    console.log(user.id)
-
     return (
         <NavigationContainer>
             {user.id

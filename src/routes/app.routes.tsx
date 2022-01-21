@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 
 import { Home } from '../screen/Home';
 import { AppointmentsDetailes } from '../screen/AppointmentsDetailes';
@@ -16,7 +16,12 @@ export function AppRoutes() {
                 cardStyle: {
                     backgroundColor: 'transparent',
                 },
+                // gestureEnabled: true,
+                // cardOverlayEnabled: true,
+                // ...TransitionPresets.DefaultTransition,
             }}
+            // mode="modal"
+            // headerMode='none'
         >
             <Screen name="home" component={Home} />
             <Screen name="appointmentsDetailes" component={AppointmentsDetailes} />

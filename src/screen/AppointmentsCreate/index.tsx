@@ -25,15 +25,21 @@ import { ModalView } from '../../components/modalView';
 import { Guilds } from '../Guilds';
 
 import { theme } from '../../global/styles/theme';
+import { maskDayMonth, maskHourMinute } from '../../util/masks';
 import { styles } from './styles';
 
 import { GuildProps } from '../../components/guild';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
+import { BottomSheetModalView } from '../../components/BottomSheetModalView';
+import useModal from '../../hook/useModal';
+import { Message } from '../../components/message';
 
 
 export function AppointmentsCreate() {
 
     const navigation = useNavigation();
+
+    const { handleOpenModal } = useModal()
 
     const [category, setCategory] = useState<string>('');
     const [openGuildsModal, setOpenGuildsModal] = useState<boolean>(false);
@@ -42,6 +48,17 @@ export function AppointmentsCreate() {
     const [hourMinute, setHourMinute] = useState('');
     const [dayMonth, setDayMonth] = useState('');
     const [description, setDescription] = useState('');
+
+    function handletHourMinute(text: string) {
+        const value = maskHourMinute(text)
+        setHourMinute(value)
+    };
+
+    function handleDayMonth(text: string) {
+        const value = maskDayMonth(text)
+        setDayMonth(value)
+    };
+
 
     function handleCategorySelect(categoryId: string) {
         setCategory(categoryId)
@@ -57,24 +74,33 @@ export function AppointmentsCreate() {
     };
 
     async function handleSave() {
-        const newAppointment = {
-            id: uuid.v4(),
-            guild,
-            category,
-            date: `${dayMonth.slice(0, 2)}/${dayMonth.slice(2, 4)}`,
-            hours: `${hourMinute.slice(0, 2)}:${hourMinute.slice(2, 4)}`,
-            description,
+
+
+        if (category && guild.id && hourMinute && dayMonth && description) {
+            const newAppointment = {
+                id: uuid.v4(),
+                guild,
+                category,
+                date: dayMonth,
+                hours: hourMinute,
+                description,
+            }
+
+            const storage = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
+            const appointments = storage ? JSON.parse(storage) : []
+
+            await AsyncStorage.setItem(
+                COLLECTION_APPOINTMENTS,
+                JSON.stringify([...appointments, newAppointment])
+            );
+
+            navigation.navigate('home');
+
+        } else {
+            return handleOpenModal();
         }
 
-        const storage = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
-        const appointments = storage ? JSON.parse(storage) : []
 
-        await AsyncStorage.setItem(
-            COLLECTION_APPOINTMENTS,
-            JSON.stringify([...appointments, newAppointment])
-        );
-
-        navigation.navigate('home');
     }
 
 
@@ -142,9 +168,10 @@ export function AppointmentsCreate() {
                                     marginBottom: 12,
                                 }]}>Dia e Mês</Text>
                                 <SmallInput
-                                    maxLength={4}
+                                    maxLength={5}
                                     placeholder="dd/mm"
-                                    onChangeText={setDayMonth}
+                                    onChangeText={handleDayMonth}
+                                    value={dayMonth}
                                 />
                             </View>
 
@@ -153,9 +180,10 @@ export function AppointmentsCreate() {
                                     marginBottom: 12,
                                 }]}>Horário</Text>
                                 <SmallInput
-                                    maxLength={4}
+                                    maxLength={5}
                                     placeholder="hh:mm"
-                                    onChangeText={setHourMinute}
+                                    onChangeText={handletHourMinute}
+                                    value={hourMinute}
                                 />
                             </View>
                         </View>
@@ -182,7 +210,7 @@ export function AppointmentsCreate() {
                         <Buttons
                             title='Agendar'
                             onPress={handleSave}
-                            sty={{ backgroundColor: theme.colors.primary, }}
+                            sty={{ backgroundColor: theme.colors.primary }}
                         />
                     </View>
 
@@ -194,6 +222,19 @@ export function AppointmentsCreate() {
                 >
                     <Guilds handleGuildsSelected={handleGuildSelected} />
                 </ModalView>
+
+                <BottomSheetModalView >
+                    <Message
+                        icon={
+                            <Feather
+                                name={'info'}
+                                size={32}
+                                color={theme.colors.primary}
+                            />
+                        }
+                        message='Por favor, verifique se você preencheu todas as informações para criar sua partida.'
+                    />
+                </BottomSheetModalView>
 
             </Background>
         </KeyboardAvoidingView>

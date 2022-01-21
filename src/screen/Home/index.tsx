@@ -17,7 +17,8 @@ import { styles } from './styles';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { theme } from '../../global/styles/theme';
-import { BottomSheetModalView } from '../../components/modalView';
+import { BottomSheetModalView } from '../../components/BottomSheetModalView';
+import { SignOut } from '../SignOut';
 
 
 
@@ -42,6 +43,8 @@ export function Home() {
     function handleAppointmentCreate() {
         navigtion.navigate('appointmentsCreate');
     };
+
+    
 
 
     async function loadAppointments() {
@@ -120,7 +123,9 @@ export function Home() {
                 </>
             }
 
-            <BottomSheetModalView />
+            <BottomSheetModalView >
+                <SignOut />
+            </BottomSheetModalView>
 
         </Background >
     )

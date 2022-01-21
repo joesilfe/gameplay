@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
         borderRadius: 2,
         backgroundColor: theme.colors.secondary30,
         alignSelf: 'center',
-        marginTop: 12,
+        marginTop: 8,
     },
     containerBottomSheet: {
         flex: 1,

@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginVertical: 32,
+        marginTop: 12,
+        marginBottom: 32,
     },
     message: {
         fontFamily: theme.fonts.title700,
