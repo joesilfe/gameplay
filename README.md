@@ -26,6 +26,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Iphone X Helper](https://github.com/ptelad/react-native-iphone-x-helper)
 - [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
 - [Vector Icons](https://icons.expo.fyi/)
+- [Bottom Sheet](https://gorhom.github.io/react-native-bottom-sheet)
+- [Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
 
 ## 🚀 Como executar
